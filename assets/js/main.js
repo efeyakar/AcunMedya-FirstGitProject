@@ -266,7 +266,7 @@ function ValidateName() {
     const name = document.getElementById("name");
     const errorarea = document.getElementById("error-message");
     if (name.value === "") {
-        errorarea.innerHTML = "Ýsim alaný boþ býrakýlamaz";
+        errorarea.innerHTML = "ï¿½sim alanï¿½ boï¿½ bï¿½rakï¿½lamaz";
         errorFlag = true;
     }
 }
@@ -275,9 +275,18 @@ function validateSubject() {
     const subject = document.getElementById("subject");
     const errorarea = document.getElementById("error-message");
     if (subject.value === "") {
-        errorarea.innerHTML = "Konu Baþlýðý boþ býrakýlamaz";
+        errorarea.innerHTML = "Konu Baï¿½lï¿½ï¿½ï¿½ boï¿½ bï¿½rakï¿½lamaz";
         errorFlag = true;
     }
+}
+
+function validateMessage() {
+  const message = document.getElementById("message");
+  const errorarea = document.getElementById("error-message");
+  if (message.value == "") {
+    errorarea.innerHTML = "Mesaj BaÅŸlÄ±ÄŸÄ± BoÅŸ BÄ±rakÄ±lamaz.";
+    errorFlag = true;
+}
 }
 
 function validateForm() {
@@ -285,6 +294,9 @@ function validateForm() {
     ValidateName();
     if (!errorFlag) {
         validateSubject();
+    }
+    if (!errorFlag) {
+      validateMessage();
     }
     if (!errorFlag) {
         sendWhatsapp();
@@ -297,16 +309,16 @@ function sendWhatsapp() {
     const message = document.getElementById("message").value;
     const subject = document.getElementById("subject").value;
 
-    // Mesaj içeriðini oluþturun
-    const messageContent = "ÝSÝM: " + name + "%0A" + "KONU: " + subject + "%0A" + "MESAJ: " + message;
+    // Mesaj iï¿½eriï¿½ini oluï¿½turun
+    const messageContent = "Ä°SÄ°M: " + name + "%0A" + "KONU: " + subject + "%0A" + "MESAJ: " + message;
 
-    // Telefon numarasýný ve mesajý kodlayýn
-    const phoneNumber = "+905347231566"; // WhatsApp numarasý
+    // Telefon numarasï¿½nï¿½ ve mesajï¿½ kodlayï¿½n
+    const phoneNumber = "+905347231566"; // WhatsApp numarasï¿½
     const encodedMessage = encodeURIComponent(messageContent);
 
-    // WhatsApp URL'sini oluþturun
+    // WhatsApp URL'sini oluï¿½turun
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${messageContent}`;
 
-    // URL'yi yeni bir sekmede açýn
+    // URL'yi yeni bir sekmede aï¿½ï¿½n
     window.open(whatsappURL, "_blank");
 }

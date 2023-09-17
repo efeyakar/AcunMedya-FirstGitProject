@@ -1,1 +1,3 @@
 bu klasörde değişiklik yaptım
+
+conflict değişikliği-2

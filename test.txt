@@ -2,3 +2,5 @@ bu klasörde değişiklik yaptım
 
 conflit değişikliği-1 
 conflict değişikliği-2
+
+Ben değişikliği geri alacağım.

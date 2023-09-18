@@ -67,7 +67,7 @@
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
                     <li>
-                        <a href="#" class="nav-link scrollto active">
+                        <a href="flowchart-nedir.html" class="nav-link scrollto">
                             <span>Flowchart nedir ?</span>
                         </a>
 
@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="stack-ve-heap.html" class="nav-link scrollto ">
+                        <a href="#" class="nav-link scrollto active">
                             <span>Stack ve Heap Kavramları</span>
                         </a>
                     </li>
@@ -140,7 +140,7 @@
                     <h2></h2>
                     <ol>
                         <li><a href="../index.html">Home</a></li>
-                        <li>Flowchart</li>
+                        <li>Stack ve Heap</li>
                     </ol>
                 </div>
 
@@ -149,51 +149,35 @@
 
         <section class="inner-page">
             <div class="container" style="font-size:18px" id="flowchart">
-                <h2>FlowChart Nedir?</h2>
+                <h2>Stack ve Heap Kavramları</h2>
                 <br />
-
+                <img src="../assets/img/OIG.jpeg" class="img-fluid" style="float: left; width: 400px; height: auto; margin-right: 40px;">
                 <p>
-                    <img src="..\assets\img\LampFlowchart_tr.svg" style="float:left;margin-right:40px;" />
-                    &nbsp  &nbsp Flowchart yani akış şeması, bir işlemi, sistemi veya bilgisayar algoritmasını gösteren bir diyagramdır.
-                    Genellikle karmaşık süreçleri net, anlaşılması kolay diyagramlarla belgelemek, incelemek, planlamak, geliştirmek
-                    ve iletmek için birçok alanda yaygın olarak kullanılırlar.
-                    Bazen akış şemaları olarak yazılan flowchartlar, akış
-                    türünü ve diziyi tanımlamak için bağlantı oklarıyla birlikte adım türünü tanımlamak için dikdörtgenler, ovaller,
-                    elmaslar ve potansiyel olarak çok sayıda başka şekil kullanır.
+                    
+                    &nbsp  &nbsp Stack ve Heap bellekte bulunan mantıksal yapılardır. int, short, byte, long, decimal, double, float gibi
+                    veri tiplerinin değerleri stack de tutulur.Çalışma zamanından (runtime) önce bu değerlerin bilinmesi gerekir ve işletim
+                    sistemi program çalışmadan önce stack de belirli bir yer ayırır eğer bu bölüm kodu yazan kişi tarafından aşılırsa stack 
+                    taşma hatası ile (stack overflow) karşılaşılabilir.. Stack de veriler üst üste (LIFO) mantığında dizilir ve sırası gelmeden 
+                    aradaki bir değer ile işlem yapılamaz. Class türündeki değişkenler referans tipleridir ve referans ettikleri model stack de değerleri
+                    ise heap de saklanır.
                 </p>
                 <p>
-                    &nbsp  &nbsp Basit, elle çizilmiş grafiklerden, birden fazla adımı ve rotayı gösteren kapsamlı bilgisayarla çizilmiş diyagramlara
-                    kadar çeşitlilik gösterebilirler. Çeşitli akış şemalarının tüm formlarını göz önüne alırsak, bunlar çok sayıda alanda
-                    hem teknik hem de teknik olmayan insanlar tarafından kullanılan, gezegendeki en yaygın diyagramlardan biridir.
+                    &nbsp  &nbsp Heap ve Stack arasında ki en önemli farklardan birisi heap de veriler karışık bir şekilde saklanır stack de ise artan ya da azalan 
+                    adres mantığında çalışır. Buna bağlı olarak heap de ki bir veriye erişmek stack de ki bir veriye erişmeye göre daha maliyetli 
+                    bir işlemdir. Başka bir farkı ise stack de ki veri hemen silinirken heap de ki veri Garbage Collector algoritmasına bağlıdır.
                 </p>
                 <p>
-                    &nbsp  &nbsp Flowchartlar bazen Süreç Akış Şeması, Süreç Haritası, Fonksiyonel Akış Şeması, İş Süreç Eşleme, İş Süreç Modelleme ve
-                    Gösterim (BPMN) veya Süreç Akış Şeması (PFD) gibi daha özel isimlerle çağrılır. Veri Akışı Diyagramları (DFD’ler) ve
-                    Birleşik Modelleme Dili (UML) Etkinlik Diyagramları gibi diğer popüler diyagramlarla ilgilidir.
+                    &nbsp  &nbsp String veri tipinden hiç bahsetmedik. Yukarıda bahsettiğim veri tiplerinden farklı olarak string obje tipidir.
+                    bir string tanımlayalım. string in referansı stack de, objesi ise heap de depolanır. biz eğer tanımlamış olduğumuz string'i değiştirirsek
+                    heap üzerinde değişmez yeni bir string obje oluşur. Eskisi ise Garbage Collectorler aracılığı ile temizlenir.
+                </p>
+                <p>
+                    &nbsp  &nbsp Toparlayacak olursak stack de oluşturulan bir değişkene değer atıldığında ve sonradan aynı değer stack de bulunan farklı bir değişkene 
+                    atıldığında dinamik oluşamayacağı için birbirinde habersiz iki farklı değişken mantığında çalışır. Fakat heap alanında ise bir obje oluşturulduğunda 
+                    ve daha sonradan aynı değere sahip farklı bir obje oluşturulduğunda heap alanında zaten böyle bir obje olduğu için tekrar oluşturmaz yenisini de aynı objeye bağlar.
+                    
                 </p>
                 <br />
-                <br />
-                <br />
-                <img src="..\assets\img\akis-semasi.jpg" style="float:right;" class="img-fluid" />
-                <p style="margin-top:40px">
-                    <b>Oval:</b> Bir sürecin başlangıcını veya sonunu gösterir. Genellikle bir akış şemasının iki uç noktasında kullanılır.
-                    Sembolün içine “Başlangıç” ve “Bitiş” gibi belirleyici ifadeler yazılabilir.
-                </p>
-                <p>
-                    <b>Ok:</b> Bir akış şemasında proses akışının yönünü gösterir. Semboller arasındaki bağlantıları sağlar.
-                </p>
-                <p>
-                    <b>Dikdörtgen:</b> Bir görevi, işlemi veya süreci gösterir. Sembol içerisine akışın o adımına gelindiğinde uygulanması
-                    gereken işlem ifadeleri yazılır.
-                </p>
-                <p>
-                    <b>Paralelkenar:</b> Bir akış şemasındaki veri veya bilgilerin girişini veya çıkışını temsil eder. Örneğin, bir kullanıcıdan bir
-                    değer girmesini istemek veya bir rapor yazdırmak için kullanılabilir.
-                </p>
-                <p>
-                    <b>Elmas:</b> Bir akış şemasında kapalı uçlu bir soru sormak için kullanılır. Sorunun cevapları “Evet” ya da “Doğru” ve “Hayır” ya da “Yanlış”
-                    olarak iki farklı kararı temsil eder. Akışta kafa karışıklığını önlemek için karar sembolünden çıkan okların üzerinde hangi cevabı temsil ettiği yazılmalıdır.
-                </p>
             </div>
         </section>
 

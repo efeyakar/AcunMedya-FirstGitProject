@@ -1,4 +1,0 @@
-bu klasörde değişiklik yaptım
-
-conflit değişikliği-1 
-conflict değişikliği-2
